@@ -75,8 +75,12 @@ WSGI_APPLICATION = 'products.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'topskills2',
+        'USER': 'topskills2',
+        'PASSWORD': 'ote2020',
+        'HOST': 'pgsql03-farm70.uni5.net',
+        'PORT': ''                 # set to empty string for default
     }
 }
 
