@@ -1,17 +1,12 @@
 from django.db import models
 import uuid
-import datetime
-
-
-def timestamp_now():
-    return str(datetime.datetime.now())[:-7]
 
 
 # Create your models here.
 class Product(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4(), editable=False)
-    created_at = models.DateTimeField(default=timestamp_now())
-    updated_at = models.DateTimeField(default=timestamp_now())
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
     origin = models.TextField(max_length=16)
     sku = models.TextField(max_length=16)
     seller_id = models.UUIDField(max_length=36)
